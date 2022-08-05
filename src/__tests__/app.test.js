@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import App from '../App';
 import EventList from '../EventList';
 import CitySearch from '../CitySearch';
+import NumberOfEvents from '../NumberOfEvents';
 
 describe('<App /> component', () => {
   let AppWrapper;
@@ -18,11 +19,15 @@ describe('<App /> component', () => {
     expect(AppWrapper.find(CitySearch)).toHaveLength(1);
   });
 
-  test('renders a list of suggestions', () => {
-    const CitySearchWrapper = shallow(<CitySearch />);
-    expect(CitySearchWrapper.find('.suggestions')).toHaveLength(1);
-  });
-  
+    // test('renders a list of suggestions', () => {
+    //   const CitySearchWrapper = shallow(<CitySearch />);
+    //   expect(CitySearchWrapper.find('.suggestions')).toHaveLength(1);
+    // });
+
+  test('render NumberOfEvents', () => {
+    expect(AppWrapper.find(NumberOfEvents)).toHaveLength(1);
+});
+
 });
 
 
