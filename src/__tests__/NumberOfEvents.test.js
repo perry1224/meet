@@ -24,7 +24,7 @@ describe('<NumberofEvents /> component', () => {
     });
     const eventObject={ target: { value: 7 } };
       NumberofEventsWrapper.find('.render-number').simulate('change', eventObject);
-      expect(NumberofEventsWrapper.state('.render-number')).toBe(7);
+      expect(NumberofEventsWrapper.state('renderNumber')).toBe(7);
   })
  
 })
