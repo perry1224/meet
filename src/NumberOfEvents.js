@@ -14,7 +14,7 @@ class NumberOfEvents extends Component {
             this.setState({
                 renderNumber: event.target.value,
                 errorText: '',
-                numofEvents: 32
+                
                 
             });
         }
