@@ -10,7 +10,7 @@ class NumberOfEvents extends Component {
                 errorText: 'Please enter a number between 1 and 32'
             })
         } else {
-            this.props.updateEvents(undefined, event.target.value);
+            // this.props.updateEvents(undefined, event.target.value);
             this.setState({
                 renderNumber: event.target.value,
                 errorText: ''
@@ -34,7 +34,7 @@ class NumberOfEvents extends Component {
             <input type="number"
             className="number-input"
             placeholder="Enter number"
-            value={this.state.numOfEvents}
+            value={this.state.renderNumber}
             onChange={this.handleInputChanged} />
             </div>
         );
