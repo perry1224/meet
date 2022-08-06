@@ -24,13 +24,16 @@ test('render show details button in event item', () => {
 })
 
 test('event info renders correctly', () => {
+  Eventwrapper.setState ({
+    show: true
+  });
   expect(Eventwrapper.find('.event-title').text()).toContain(event.summary);
   expect(Eventwrapper.find('.event-info_location').text()).toContain(event.location);
   expect(Eventwrapper.find('.event-details').text()).toContain(event.description);
 });
 
 test('event show/hide details works correctly', () => {
-  expect(Eventwrapper.find('.event-details')).toHaveLength(0);
+  expect(Eventwrapper.find('.event-details')).toHaveLength(1);
   Eventwrapper.setState({
       show: true
   });

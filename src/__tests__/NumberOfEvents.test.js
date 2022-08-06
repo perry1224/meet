@@ -10,12 +10,12 @@ describe('<NumberofEvents /> component', () => {
   });
 
   test('render number input', () =>{
-    expect(NumberofEventsWrapper.find('.render-number')).toHaveLength(1);
+    expect(NumberofEventsWrapper.find('.number-input')).toHaveLength(1);
   });
 
   test('default number of events is 32', () =>{
 
-    expect(NumberofEventsWrapper.find('.render-number').prop('value')).toBe(32);
+    expect(NumberofEventsWrapper.find('.number-input').prop('value')).toBe(32);
   });
 
   test('render change the number of events in input field by changing state', () => {
@@ -23,7 +23,7 @@ describe('<NumberofEvents /> component', () => {
       renderNumber: 32
     });
     const eventObject={ target: { value: 7 } };
-      NumberofEventsWrapper.find('.render-number').simulate('change', eventObject);
+      NumberofEventsWrapper.find('.number-input').simulate('change', eventObject);
       expect(NumberofEventsWrapper.state('renderNumber')).toBe(7);
   })
  
