@@ -20,13 +20,13 @@ test('render info in event item', () => {
 });
 
 test('render show details button in event item', () => {
-  expect(Eventwrapper.find('.details-btn')).toHaveLength(1);
+  expect(Eventwrapper.find('.details-button')).toHaveLength(1);
 })
 
 test('event info renders correctly', () => {
-  expect(Eventwrapper.find('.event-info').text()).toContain(event.start.dateTime);
-  expect(Eventwrapper.find('.event-info').text()).toContain(event.start.timeZone);
-  expect(Eventwrapper.find('.event-info').text()).toContain(event.location);
+  expect(Eventwrapper.find('.event-title').text()).toContain(event.summary);
+  expect(Eventwrapper.find('.event-info_location').text()).toContain(event.location);
+  // expect(Eventwrapper.find('.event-details').text()).toContain(event.description);
 });
 
 test('event show/hide details works correctly', () => {

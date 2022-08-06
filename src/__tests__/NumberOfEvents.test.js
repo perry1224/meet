@@ -6,7 +6,7 @@ describe('<NumberofEvents /> component', () => {
 
   let NumberofEventsWrapper;
   beforeAll(() => {
-    NumberofEventsWrapper= shallow(<NumberOfEvents updateEVents={() => {} }/>)
+    NumberofEventsWrapper= shallow(<NumberOfEvents updateEvents={() => {} }/>)
   });
 
   test('render number input', () =>{
@@ -18,12 +18,12 @@ describe('<NumberofEvents /> component', () => {
   });
 
   test('render change the number of events in input field by changing state', () => {
-    NumberofEventsWrapper.setState({
-      numofEvents: 32
-    });
-     eventObject = { target: { value: 7 } };
+      NumberofEventsWrapper.setState({
+        numofEvents: 32
+      });
+      const eventObject = { target: { value: 7 } };
       NumberofEventsWrapper.find('.number-input').simulate('change', eventObject);
-      expect(NumberofEventsWrapper.state('numofevents')).toBe(7);
+      expect(NumberofEventsWrapper.state('renderNumber')).toBe(7);
   })
  
 })
