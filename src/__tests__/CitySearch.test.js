@@ -14,14 +14,10 @@ describe('<CitySearch /> component', () => {
   });
 
   test('renders text input correctly', () => {
-    let CitySearchWrapper;
-    beforeAll(() => {
-      CitySearchWrapper = shallow(<CitySearch />);
-    });
-    // const CitySearchWrapper = shallow(<CitySearch />);
-    // const query = CitySearchWrapper.state('query');
-    // expect(CitySearchWrapper.find('.city').prop('value')).toBe(query);
+    const query = CitySearchWrapper.state('query');
+     expect(CitySearchWrapper.find('.city').prop('value')).toBe(query);
   });
+  
   test('change state when text input changes', () => {
     // const CitySearchWrapper = shallow(<CitySearch />);
     CitySearchWrapper.setState( {
