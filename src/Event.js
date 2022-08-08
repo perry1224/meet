@@ -9,9 +9,9 @@ class Event extends Component {
 
   getDate = (string, zone) => {
       let date = new Date(string);
-      let dateString = new Intl.DateTimeFormat('en-us', { dateStyle: 'long', timeStyle: 'short' }).format(date);
+      //let dateString = new Intl.DateTimeFormat('en-us', { dateStyle: 'long', timeStyle: 'short' }).format(date);
       let dateString2 = date.toLocaleDateString('en-us', { timeZone: zone, month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', timeZoneName: 'short' });
-      return dateString, dateString2;
+      return dateString2;
   }
 
   constructor() {
