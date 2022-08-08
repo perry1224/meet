@@ -6,9 +6,11 @@ import { extractLocations } from '../api';
 
 describe('<CitySearch /> component', () => {
   let locations, CitySearchWrapper;
+  
   beforeAll(() => {
     locations = extractLocations(mockData);
-    CitySearchWrapper = shallow(<CitySearch locations={locations} />);
+    CitySearchWrapper = shallow(<CitySearch locations={locations} updateEvents={() => {}} />);
+
   });
 
   test('renders text input correctly', () => {
@@ -57,6 +59,7 @@ describe('<CitySearch /> component', () => {
   });
 
   test("selecting a suggestion should change query state", () => {
+    
     CitySearchWrapper.setState({
       query: 'Berlin'  });
     const suggestions = CitySearchWrapper.state('suggestions');

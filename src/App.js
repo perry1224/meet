@@ -3,12 +3,20 @@ import EventList from './EventList';
 import './App.css';
 import CitySearch from './CitySearch';
 import NumberofEvents from './NumberOfEvents';
+import { getEvents, extractLocations } from './api';
+
 
 class App extends Component  {
+  state = {
+    events: [],
+    locations: []
+  };
+
+
   render () {
     return (
       <div className="App">
-      <EventList />
+      <EventList events = {this.state.events} />
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
       <NumberofEvents updateEvents={this.updateNumberOfEvents} />
       
@@ -22,22 +30,46 @@ class App extends Component  {
     activeLocation: 'all',
   }
 
-updateEvents = (location, eventCount = 
-    this.state.eventCount) => {
-     getEvents().then((events) => {
-      let locationEvents = (location === "all" ? 
-         events : events.filter((event) => event.location === location));
-      locationEvents = locationEvents.slice(0, eventCount)
-      this.setState({
-        events: locationEvents,
-        numberOfEvents: eventCount,
-        activeLocation: location
-      });
-    });
-  }
+// updateEvents = (location, eventCount = 
+//     this.state.eventCount) => {
+//      getEvents().then((events) => {
+//       let locationEvents = (location === "all" ? 
+//          events : events.filter((event) => event.location === location));
+//       locationEvents = locationEvents.slice(0, eventCount)
+//       this.setState({
+//         events: locationEvents,
+//         numberOfEvents: eventCount,
+//         activeLocation: location
+//       });
+//     });
+    
+//   }
 
-  updateNumberOfEvents = (eventCount) => {
-         updateEvents(this.state.activeLocation, eventCount);
+updateEvents = (location) => {
+  getEvents().then((events) => {
+    const locationEvents = (location === 'all') ?
+      events :
+      events.filter((event) => event.location === location);
+    this.setState({
+      events: locationEvents
+    });
+  });
+}
+
+  // updateNumberOfEvents = (eventCount) => {
+  //        updateEvents(this.state.activeLocation, eventCount);
+
+componentDidMount() {
+  this.mounted = true;
+  getEvents().then((events) => {
+    if (this.mounted) {
+      this.setState({ events, locations: extractLocations(events) });
+    }
+  });
+}
+
+componentWillUnmount(){
+  this.mounted = false;
 }
 }
 
