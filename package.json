@@ -28,9 +28,7 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js, jsx}",
-      "!src/App.js",
       "!src/index.js",
-      "!src/NumberOfEvents.js",
       "!src/service-worker.js",
       "!src/reportWebVitals.js",
       "!src/serviceWorkerRegistration.js"
