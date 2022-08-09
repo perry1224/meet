@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-
-
 class NumberOfEvents extends Component {
   constructor() {
      super();
@@ -27,8 +25,6 @@ class NumberOfEvents extends Component {
             });
         }
     }
-
-  
 
     render() {
 
