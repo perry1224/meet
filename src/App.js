@@ -14,11 +14,14 @@ class App extends Component  {
 
 
   render () {
+    console.log(this, this.updateEvents)
     return (
       <div className="App">
-      <EventList events = {this.state.events} />
       <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-      <NumberofEvents updateEvents={this.updateNumberOfEvents} />
+      <NumberofEvents updateEvents={this.updateEvents} />
+      <EventList events = {this.state.events} />
+  
+      
       
       </div>
     );

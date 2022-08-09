@@ -3,7 +3,15 @@ import React, { Component } from 'react';
 
 
 class NumberOfEvents extends Component {
+  constructor() {
+     super();
+      this.state = {
+        renderNumber: 32,
+          errorText: ''
+        }
+    }
     handleInputChanged = (event) => {
+      console.log(this)
         if (event.target.value <= 0 || event.target.value > 32) {
             this.setState({
                 renderNumber: event.target.value,
@@ -20,13 +28,7 @@ class NumberOfEvents extends Component {
         }
     }
 
-    constructor() {
-        super();
-        this.state = {
-            renderNumber: 32,
-            errorText: ''
-        }
-    }
+  
 
     render() {
 

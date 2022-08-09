@@ -2,6 +2,14 @@ import React, { Component } from "react";
 
 
 class Event extends Component {
+   constructor() {
+      super();
+      this.state = {
+          show: false,
+          buttonText: 'View details'
+      }
+  } 
+  
   toggleDetails = () => {
       let string = this.state.show ? 'View details' : 'Hide details';
       this.setState({ buttonText: string, show: !this.state.show });
@@ -14,13 +22,7 @@ class Event extends Component {
       return dateString2;
   }
 
-  constructor() {
-      super();
-      this.state = {
-          show: false,
-          buttonText: 'View details'
-      }
-  }
+
 
   render() {
       const { event } = this.props;
