@@ -1,16 +1,25 @@
 {
-  "main.css": "/meet/static/css/main.a3e1201e.chunk.css",
-  "main.js": "/meet/static/js/main.811ba7a2.chunk.js",
-  "main.js.map": "/meet/static/js/main.811ba7a2.chunk.js.map",
-  "static/js/1.03ae7ea8.chunk.js": "/meet/static/js/1.03ae7ea8.chunk.js",
-  "static/js/1.03ae7ea8.chunk.js.map": "/meet/static/js/1.03ae7ea8.chunk.js.map",
-  "static/js/2.45d599a8.chunk.js": "/meet/static/js/2.45d599a8.chunk.js",
-  "static/js/2.45d599a8.chunk.js.map": "/meet/static/js/2.45d599a8.chunk.js.map",
-  "runtime~main.js": "/meet/static/js/runtime~main.a21e384e.js",
-  "runtime~main.js.map": "/meet/static/js/runtime~main.a21e384e.js.map",
-  "static/media/logo.svg": "/meet/static/media/logo.5d5d9eef.svg",
-  "static/css/main.a3e1201e.chunk.css.map": "/meet/static/css/main.a3e1201e.chunk.css.map",
-  "index.html": "/meet/index.html",
-  "precache-manifest.31688622b201d4e33eb424473a22bbdd.js": "/meet/precache-manifest.31688622b201d4e33eb424473a22bbdd.js",
-  "service-worker.js": "/meet/service-worker.js"
+  "files": {
+    "main.css": "/meet/static/css/main.72d0b9ab.chunk.css",
+    "main.js": "/meet/static/js/main.c5966924.chunk.js",
+    "main.js.map": "/meet/static/js/main.c5966924.chunk.js.map",
+    "runtime-main.js": "/meet/static/js/runtime-main.3d3e26ce.js",
+    "runtime-main.js.map": "/meet/static/js/runtime-main.3d3e26ce.js.map",
+    "static/js/2.4f3edb5b.chunk.js": "/meet/static/js/2.4f3edb5b.chunk.js",
+    "static/js/2.4f3edb5b.chunk.js.map": "/meet/static/js/2.4f3edb5b.chunk.js.map",
+    "static/js/3.c69e27e1.chunk.js": "/meet/static/js/3.c69e27e1.chunk.js",
+    "static/js/3.c69e27e1.chunk.js.map": "/meet/static/js/3.c69e27e1.chunk.js.map",
+    "index.html": "/meet/index.html",
+    "service-worker.js": "/meet/service-worker.js",
+    "service-worker.js.LICENSE.txt": "/meet/service-worker.js.LICENSE.txt",
+    "service-worker.js.map": "/meet/service-worker.js.map",
+    "static/css/main.72d0b9ab.chunk.css.map": "/meet/static/css/main.72d0b9ab.chunk.css.map",
+    "static/js/2.4f3edb5b.chunk.js.LICENSE.txt": "/meet/static/js/2.4f3edb5b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3d3e26ce.js",
+    "static/js/2.4f3edb5b.chunk.js",
+    "static/css/main.72d0b9ab.chunk.css",
+    "static/js/main.c5966924.chunk.js"
+  ]
 }
