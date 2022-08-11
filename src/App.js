@@ -21,8 +21,9 @@ class App extends Component {
         this.setState({ events, locations: extractLocations(events) });
       }
     });
+    
   }
-
+  
   componentWillUnmount() {
     this.mounted = false;
   }
@@ -35,11 +36,11 @@ class App extends Component {
           : events.filter((event) => event.location === location);
       locationEvents = locationEvents.slice(0, eventCount);
       this.setState({
-        events: locationEvents,
-        numberOfEvents: eventCount,
-        activeLocation: location,
+          events: locationEvents,
+          numberOfEvents: eventCount,
+          activeLocation: location,
+        });
       });
-    });
   };
 
   updateNumberOfEvents = (eventCount) => {
