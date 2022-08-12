@@ -6,6 +6,8 @@ import NumberofEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
 import "./nprogress.css";
 
+
+
 class App extends Component {
   state = {
     events: [],
@@ -49,6 +51,7 @@ class App extends Component {
 render() {
   return (
     <div className="App">
+      <h1>Search for events around the world!</h1>
       <CitySearch
         locations={this.state.locations}
         updateEvents={this.updateEvents}
