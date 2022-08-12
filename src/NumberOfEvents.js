@@ -16,7 +16,7 @@ class NumberOfEvents extends Component {
                 errorText: 'Please enter a number between 1 and 32'
             })
         } else {
-            this.props.updateEvents(undefined, event.target.value);
+            this.props.updateEvents(event.target.value);
             this.setState({
                 renderNumber: event.target.value,
                 errorText: '',
