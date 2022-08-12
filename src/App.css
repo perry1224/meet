@@ -2,12 +2,12 @@
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-color: rgb(61, 58, 70);
+  background-color: rgb(213, 225, 162);
 }
 
 .App * {
   box-sizing: border-box;
-  color: rgb(0, 158, 42)
+  color: rgb(53, 81, 195)
   
 }
 
