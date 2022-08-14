@@ -26,6 +26,9 @@
     "workbox-strategies": "^6.5.3",
     "workbox-streams": "^6.5.3"
   },
+  
+  "test": "react-scripts test --watchAll=false",
+
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js, jsx}",
