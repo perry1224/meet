@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ErrorAlert } from './Alert';
 
 class NumberOfEvents extends Component {
   constructor() {
@@ -28,6 +29,7 @@ class NumberOfEvents extends Component {
 
         return (
             <div className="number-of-events">
+              <ErrorAlert text={this.state.errorText} />
                 <p className="input-label">Number of Events:</p>
             <input type="number"
             className="number-input"
