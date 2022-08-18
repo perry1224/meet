@@ -5,6 +5,7 @@ import CitySearch from "./CitySearch";
 import NumberofEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
 import "./nprogress.css";
+import { OfflineAlert } from './Alert';
 
 
 
@@ -14,6 +15,8 @@ class App extends Component {
     locations: [],
     numberOfEvents: 32,
     activeLocation: "all",
+    offlineText: ''
+    
   };
 
 
@@ -24,8 +27,15 @@ class App extends Component {
         this.setState({ events, locations: extractLocations(events) });
       }
     });
-    
-  }
+    if (!navigator.onLine) {
+      this.setState({
+        offlineText: "Your're offline! The data was loaded from the cache.",
+      });
+    } else {
+      this.setState({
+        offlineText: '',
+      });
+  }}
   componentWillUnmount() {
     this.mounted = false;
   }
@@ -40,6 +50,7 @@ class App extends Component {
         events: locationEvents,
         numberOfEvents: eventCount,
         activeLocation: location,
+        
       });
     });
   };
@@ -49,8 +60,11 @@ class App extends Component {
 }
 
 render() {
+ const {offlineText} =  this.state 
+ 
   return (
     <div className="App">
+   <OfflineAlert text={offlineText} />
       <h1>Search for events around the world!</h1>
       <CitySearch
         locations={this.state.locations}
