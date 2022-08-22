@@ -6,7 +6,11 @@ import NumberofEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
 import "./nprogress.css";
 import { OfflineAlert } from './Alert';
+import  EventGenre  from './EventGenre';
 
+import {
+  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
+} from 'recharts';
 
 
 class App extends Component {
@@ -55,23 +59,56 @@ class App extends Component {
     });
   };
 
+  getData = () => {
+    const {locations, events} = this.state;
+    const data = locations.map((location)=>{
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(', ').shift()
+      return {city, number};
+    })
+    return data;
+  };
+
    updateNumberOfEvents = (eventCount) => {
          this.updateEvents(this.state.activeLocation, eventCount);
 }
 
 render() {
- const {offlineText} =  this.state 
+ const {offlineText, events, locations, numberOfEvents } =  this.state 
  
   return (
     <div className="App">
    <OfflineAlert text={offlineText} />
       <h1>Search for events around the world!</h1>
       <CitySearch
-        locations={this.state.locations}
+        locations={locations}
         updateEvents={this.updateEvents}
       />
-      <NumberofEvents updateEvents={this.updateNumberOfEvents} />
-      <EventList events={this.state.events} />
+      <NumberofEvents 
+          updateEvents={this.updateNumberOfEvents} 
+          numberOfEvents={numberOfEvents} 
+      />
+
+<h4>Events in each city</h4>
+<div className="data-vis-wrapper">
+  <EventGenre events = {events} />
+    <ResponsiveContainer height={400} >
+          <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+            <CartesianGrid />
+            <XAxis type="category" dataKey="city" name="city" />
+            <YAxis
+              allowDecimals={false}
+              type="number"
+              dataKey="number"
+              name="number of events"
+            />
+            <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+            <Scatter data={this.getData()} fill="#8884d8" />
+          </ScatterChart>
+        </ResponsiveContainer>
+</div>
+
+      <EventList events={events} />
     </div>
   );
 }
