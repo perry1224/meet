@@ -95,11 +95,16 @@ input[type="number"] {
   border-radius: 20px;
   position: relative;
   outline: 3px solid green;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 1.2em
+  
 }
 
 .event-info {
-  font-size: 0.95em
+  font-size: 1em
 }
 
 .event button {
@@ -109,7 +114,7 @@ input[type="number"] {
   position: center;
   padding: 0.5em 1em;
   display: flex;
-  justify-content: center;
+  margin-top: 15px;
 }
 
 .event button:hover {
