@@ -89,7 +89,7 @@ render() {
           numberOfEvents={numberOfEvents} 
       />
 
-<h4>Events in each city</h4>
+
 <div className="data-vis-wrapper">
   <EventGenre events = {events} />
     <ResponsiveContainer height={400} >

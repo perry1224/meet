@@ -1,18 +1,25 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+body {
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-color: rgb(213, 225, 162);
+  background-color: rgb(142, 188, 251);
 }
 
 .App * {
   box-sizing: border-box;
-  color: rgb(53, 81, 195)
+  color: rgb(3, 30, 137)
   
 }
 
 ul {
-  padding: 0;
+  padding: 50;
   list-style: none;
 }
 
@@ -32,7 +39,7 @@ input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(15, 112, 216);
   font-size: 14px;
   line-height: 20px;
   align-self: center;
@@ -84,8 +91,30 @@ input[type="number"] {
   margin-bottom: 10px;
   text-align: left;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  background-color: white;
+  border-radius: 20px;
   position: relative;
+  outline: 3px solid green;
+  font-size: 1.2em
+}
+
+.event-info {
+  font-size: 0.95em
+}
+
+.event button {
+  background-color: rgb(142, 188, 251);
+  border-radius: 10px;
+  outline: none;
+  position: center;
+  padding: 0.5em 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.event button:hover {
+  background-color: pink;
+  transform: translateY(-2px);
 }
 
 .details-btn {
@@ -96,7 +125,7 @@ input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  
+
 }
 
 .name {
