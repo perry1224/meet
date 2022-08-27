@@ -1,28 +1,29 @@
-import React, {  useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 const EventGenre = ({ events }) => {
   const [data, setData] = useState([]);
-  const colors = ['#e600e6', '#0000b3', '#00802b', '#FF8042', '#6a0dad'];
+  const COLORS = ['#e600e6', '#0000b3', '#00802b', '#FF8042', '#6a0dad'];
 
-   useEffect(() => {
+  useEffect(() => {
     setData(() => getData());
-  }, [events]); 
+  }, [events]);
 
 
-  
-const getData = () => {
-  const genres = ['React', 'Angular', 'JavaScript', 'Node','jQuery'];
+  //generating count Generes per Event
+  const getData = () => {
+    const genres = ['React', 'Angular', 'JavaScript', 'Node', 'jQuery'];
 
-  const data = genres.map((genre) => {
-    const value = events.filter((event) =>
-    event.summary.includes(genre)).length;
-    return { name: genre, value };
-  });
-  return data;
-}
-
+    const data = genres.map((genre) => {
+      //find count of events with genre in summary
+      const value = events.filter((event) =>
+        event.summary.includes(genre)
+      ).length;
+      return { name: genre, value };
+    });
+    return data;
+  };
 
 
   return (
@@ -43,7 +44,7 @@ const getData = () => {
           }}
         >
           {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
       </PieChart>
