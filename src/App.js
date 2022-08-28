@@ -44,6 +44,20 @@ class App extends Component {
     this.mounted = false;
   }
   updateEvents = (location, eventCount = this.state.eventCount) => {
+    if (!eventCount) {
+      eventCount = this.state.numberOfEvents;
+    } else {
+      eventCount = parseInt(eventCount);
+      this.setState({ numberOfEvents: eventCount });
+    }
+
+    if (location === 'pass') {
+      location = this.state.query;
+    }
+
+    if (location !== this.state.query) {
+      this.setState({ query: location });
+    }
     getEvents().then((events) => {
       let locationEvents =
         location === "all"
