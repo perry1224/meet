@@ -43,16 +43,13 @@ class App extends Component {
   componentWillUnmount() {
     this.mounted = false;
   }
-  updateEvents = (location, eventCount = this.state.eventCount) => {
+  updateEvents = (location, eventCount) => {
+    
     if (!eventCount) {
       eventCount = this.state.numberOfEvents;
     } else {
       eventCount = parseInt(eventCount);
       this.setState({ numberOfEvents: eventCount });
-    }
-
-    if (location === 'pass') {
-      location = this.state.query;
     }
 
     if (location !== this.state.query) {
